@@ -1,0 +1,131 @@
+header
+  height: 300px
+  background: linear-gradient(305deg, #3a9691, transparent)
+  padding: 15px 30px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  .Title
+    width: 50%
+    font-size: 40px
+    text-transform: uppercase
+    color: #414142
+  .Nav
+    display: flex
+    justify-content: space-between
+    align-content: center
+    ul
+      display: flex
+      gap: 15px
+      list-style: none
+      li
+        font-weight: 600
+        font-size: 16px
+       
+a
+  color: #414142
+  text-decoration: none
+         
+main
+  width: 100%
+  max-width: 1250px
+  margin: auto
+  padding: 80px 30px
+  min-height: 550px  
+  
+footer
+  background-color: #414142
+  color: #fff
+  padding: 10px
+  text-align: center
+
+.home_body
+  display: flex
+  flex-direction: column
+  gap: 50px
+  .image
+    width: 40%
+  .card
+    display: flex
+    flex-direction: row
+    gap: 30px
+    justify-content: center
+    align-content: center
+    align-items: center   
+    &:nth-child(even)
+      direction: rtl   
+    .content
+      width: 50%      
+
+.about_us_list
+  display: flex
+  flex-direction: column
+
+.events_page
+  color: #414142
+  display: flex
+  flex-direction: row
+  gap: 20px
+  .card
+    position: relative
+    h2
+      color: #414142
+      position: absolute
+      width: 100%
+      top: 50%
+      text-align: center
+      font-size: 38px
+      color: white
+      text-transform: uppercase
+      text-shadow: 1px 1px 20px black
+
+.categ_events
+  width: 100%
+  .content
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    gap: 30px
+    width: 100%
+    justify-content: flex-start
+    .card
+      display: flex
+      flex-direction: column
+      width: 30%      
+
+.event_single_page
+  color: #414142
+  .email_registr
+    margin-top: 25px
+    label
+      display: flex
+      margin-bottom: 15px
+      font-size: 18px
+      font-weight: 800
+      text-transform: uppercase
+      margin-top: 25px
+    input
+      padding-left:10px
+      height: 40px
+      min-width: 350px
+      border-radius: 5px
+      border: 1px solid #ccc
+      font-size: 16px
+    button
+      border-radius: 5px
+      height: 40px
+      min-width: 150px
+      border: none
+      font-size: 16px
+      text-transform: uppercase
+      margin-left: 10px
+      font-weight: 600
+      background: #fff
+      color: #3a9691
+      cursor: pointer
+      box-shadow: 3px 5px 10px #414142
+      &:hover
+        color: #fff
+        background: #3a9691
+      &:active  
+        box-shadow: inset 3px 5px 10px #414142
