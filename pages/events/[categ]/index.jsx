@@ -5,7 +5,7 @@ const EventsCategPage = ({ data, pageName }) => {
 };
 export default EventsCategPage;
 
-
+//`getStaticPaths` is used in dinamic routes pages to pre-render all the paths specified in it.
 export async function getStaticPaths() {
   const { events_categories } = await import("/data/data.json");
   const allPaths = events_categories.map((ev) => {
@@ -20,7 +20,10 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+// fallback to false allows to return 404 error if path doesn't match.
 
+
+// `getStaticPaths` requires using `getStaticProps`. The `context` parameter gets the parameters and the categories from our data.
 export async function getStaticProps(context) {
   const id = context?.params.categ;
   const { allEvents } = await import("/data/data.json");

@@ -6,5 +6,5 @@ const nextConfig = {
   'wembleypark.com']
   }
 }
-
+//it's necessary to add the hostname in the image configuration and restart the app to make it work
 module.exports = nextConfig

@@ -3,8 +3,11 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 
 export const SingleEvent = ({ data }) => {
+
+  //to store input value
   const inputEmail = useRef();
 
+  //The useRouter hook allows to identify the event id and change routes inside client components.
   const router = useRouter();
 
   const [message, setMessage] = useState("");
@@ -30,7 +33,9 @@ export const SingleEvent = ({ data }) => {
         },
         body: JSON.stringify({ email: emailValue, eventId }),
       });
+
       if (!response.ok) throw new Error(`Error: ${response.status}`);
+      
       const data = await response.json();
       setMessage(data.message);
       inputEmail.current.value = "";

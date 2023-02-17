@@ -1,21 +1,16 @@
-// access data
-//extract data ( all events)
-//res 404 if there's no allEvents
-//all events- map and identify eventId
-//add email into email-registr
-//only if email doesnt exists
-//check format email is ok
-
-///CWD= Current Working Directory [rootProject]
-// fs module allows to read and overwrite a file's data
-
 import path from "path";
 import fs from "fs";
 
+// fs module allows to read and overwrite a file's data
+
+//cwd==>access to the current working directory [root app]
+
+// access data through path
 function buildPath() {
   return path.join(process.cwd(), "data", "data.json");
 }
 
+//extract data (` all events`) and turn it into a js object
 function extractData(filePath) {
   const jsonData = fs.readFileSync(filePath);
   const data = JSON.parse(jsonData);
@@ -23,10 +18,15 @@ function extractData(filePath) {
 }
 
 export default function handler(req, res) {
+  
+  //destructuring method that's inside request
   const { method } = req;
+
   const filePath = buildPath();
+
   const { events_categories, allEvents } = extractData(filePath);
 
+  //res 404 if there's no allEvents
   if (!allEvents) {
     return res.status(404).json({
       status: 404,
@@ -37,10 +37,14 @@ export default function handler(req, res) {
   if (method === "POST") {
     const { email, eventId } = req.body;
 
+    //check format email is ok
     if (!email | !email.includes("@")) {
       res.status(422).json({ message: "Invalid email address" });
     }
 
+    //all events- map and identify eventId
+    //add email into email-registr
+    //only if email doesnt exists
     const newAllEvents = allEvents.map((ev) => {
       if (ev.id === eventId) {
         if (ev.emails_registered.includes(email)) {

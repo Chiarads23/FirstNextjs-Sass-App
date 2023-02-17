@@ -14,7 +14,6 @@ export const CategEvent = ({ data, pageName }) => {
                 width={300}
                 height={200}
                 src={ev.image}
-                placeholder="blur"
                 blurDataURL={ev.image}
               />
               <h2>{ev.title}</h2>
