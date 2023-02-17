@@ -53,7 +53,8 @@ export default function handler(req, res) {
           });
           return ev;
         }
-        return {
+        return { 
+          //spread operator
           ...ev,
           emails_registered: [...ev.emails_registered, email],
         };

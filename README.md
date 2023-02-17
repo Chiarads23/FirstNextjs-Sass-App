@@ -1,3 +1,18 @@
+I created this application to learn the main features of Next.js.
+
+# Tools used
+
+* HTML
+* SASS
+* Javascript
+* React.js 
+* Next.js
+* Internal json API
+* Server-Side Rendering
+* Hooks: useState, useRef, useRouter
+* Data-fetching using: getServerSideProps, getStaticProps, getStaticPaths
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
