@@ -10,12 +10,15 @@ export const SingleEvent = ({ data }) => {
   //The useRouter hook allows to identify the event id and change routes inside client components.
   const router = useRouter();
 
+
+  //to display the `message`
   const [message, setMessage] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
     const emailValue = inputEmail.current.value;
     const eventId = router?.query.id;
+    console.log(eventId);
 
     //to check if the format of the email is correct
     const validRegex =
@@ -38,6 +41,8 @@ export const SingleEvent = ({ data }) => {
       
       const data = await response.json();
       setMessage(data.message);
+
+      //to reset the value inserted after submitting
       inputEmail.current.value = "";
     } catch (e) {
       console.log("ERROR", e);

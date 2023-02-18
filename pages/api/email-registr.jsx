@@ -44,7 +44,7 @@ export default function handler(req, res) {
 
     //all events- map and identify eventId
     //add email into email-registr
-    //only if email doesnt exists
+    //only if email doesn't exists
     const newAllEvents = allEvents.map((ev) => {
       if (ev.id === eventId) {
         if (ev.emails_registered.includes(email)) {
@@ -61,6 +61,8 @@ export default function handler(req, res) {
       }
       return ev;
     });
+
+    //update database
     fs.writeFileSync(
       filePath,
       JSON.stringify({ events_categories, allEvents: newAllEvents })

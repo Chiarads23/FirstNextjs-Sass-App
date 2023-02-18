@@ -1,4 +1,4 @@
-I created this application to learn the main features of Next.js.
+I created this events application to learn the main features of Next.js.
 
 # Tools used
 
